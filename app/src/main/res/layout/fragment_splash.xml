@@ -16,7 +16,7 @@
             android:layout_gravity="center"
             app:lottie_autoPlay="true"
             app:lottie_loop="true"
-            app:lottie_rawRes="@raw/animation" />
+            app:lottie_rawRes="@raw/animation_2" />
 
     </FrameLayout>
 </layout>

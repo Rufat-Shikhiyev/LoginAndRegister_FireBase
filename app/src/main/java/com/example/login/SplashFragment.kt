@@ -32,7 +32,7 @@ class SplashFragment : Fragment() {
     }
 
     private fun playLottie() {
-        binding.animationView.repeatCount = 0
+        binding.animationView.repeatCount = 1
         binding.animationView.playAnimation()
 
         binding.animationView.addAnimatorListener(object:AnimatorListener {

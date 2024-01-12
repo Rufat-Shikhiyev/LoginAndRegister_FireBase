@@ -30,6 +30,9 @@ class RegisterFragment : Fragment() {
         binding.registerbutton.setOnClickListener {
             register()
         }
+        binding.loginbackbutton.setOnClickListener {
+            loginback()
+        }
 
         return binding.root
     }
@@ -47,6 +50,10 @@ class RegisterFragment : Fragment() {
                 }
 
             }
+    }
+
+    fun loginback(){
+        findNavController().popBackStack()
     }
 
 

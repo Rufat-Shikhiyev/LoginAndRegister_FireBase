@@ -11,58 +11,96 @@
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:background="@color/black">
+
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="60dp"
+                android:src="@drawable/head_icon"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
             <LinearLayout
-                android:layout_width="300dp"
-                android:layout_height="400dp"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginTop="32dp"
+                android:background="@drawable/layoutbg"
                 android:orientation="vertical"
+                android:padding="30dp"
+                android:gravity="center"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent">
+                app:layout_constraintTop_toBottomOf="@+id/imageView">
 
-                <EditText
-                    android:id="@+id/loginemail"
-                    android:layout_width="match_parent"
+                <TextView
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
-                    android:background="@drawable/edittext_corner"
-                    android:hint="Email"
-                    android:inputType="textEmailAddress"
-                    android:padding="10dp" />
-
-                <EditText
-                    android:id="@+id/loginpassword"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="24dp"
-                    android:background="@drawable/edittext_corner"
-                    android:hint="Password"
-                    android:inputType="textPassword"
-                    android:padding="10dp" />
+                    android:text="Login"
+                    android:textSize="40dp"
+                    android:textStyle="bold"
+                    android:textColor="@color/black"
+                    android:layout_marginBottom="30dp"/>
 
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:padding="10dp">
+                    android:layout_height="match_parent"
+                    android:foregroundGravity="center_vertical"
+                    android:orientation="vertical">
 
-                    <Button
-                        android:id="@+id/loginbutton"
-                        android:layout_width="wrap_content"
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/loginemaillayout"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_margin="5dp"
-                        android:layout_weight="1"
-                        android:text="Login" />
+                        android:hint="Email"
+                        app:hintTextColor="@color/black"
+                        android:layout_marginTop="0dp">
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/loginemail"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:imeOptions="actionNext"
+                            android:background="@drawable/edittext_corner"/>
+                    </com.google.android.material.textfield.TextInputLayout>
 
-                    <Button
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/loginpasswordlayout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Password"
+                        app:hintTextColor="@color/black"
+                        android:layout_marginTop="20dp">
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/loginpassword"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:imeOptions="actionNext"
+                            android:inputType="textPassword"
+                            android:background="@drawable/edittext_corner"/>
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                        <androidx.appcompat.widget.AppCompatButton
+                            android:id="@+id/loginbutton"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="40dp"
+                            android:background="@drawable/button_bg"
+                            android:text="Login"
+                            android:textColor="@color/white"/>
+
+                    <TextView
                         android:id="@+id/registerbutton"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_margin="5dp"
-                        android:layout_weight="1"
-                        android:text="Register" />
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="70dp"
+                        android:textStyle="bold"
+                        android:text="Don't have any account? Sign Up" />
+
                 </LinearLayout>
 
             </LinearLayout>
