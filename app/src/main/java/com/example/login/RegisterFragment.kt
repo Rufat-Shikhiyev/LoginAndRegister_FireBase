@@ -1,6 +1,7 @@
 package com.example.login
 
 import android.os.Bundle
+import android.util.Patterns
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -27,6 +28,9 @@ class RegisterFragment : Fragment() {
     ): View? {
         binding = FragmentRegisterBinding.inflate(inflater)
 
+        emailActivate()
+        valid_password()
+
         binding.registerbutton.setOnClickListener {
             register()
         }
@@ -35,6 +39,47 @@ class RegisterFragment : Fragment() {
         }
 
         return binding.root
+    }
+
+    private fun emailActivate(){
+        binding.registeremail.setOnFocusChangeListener{_,focused->
+            if(!focused){
+                binding.registeremaillayout.helperText = valid_email()
+
+            }
+        }
+
+        binding.registerpassword.setOnFocusChangeListener{_, focused->
+            if(!focused){
+                binding.registerpasswordlayout.helperText = valid_password()
+            }
+        }
+    }
+
+    private fun valid_password() : String? {
+
+        val passwordtext = binding.registerpassword.text.toString()
+
+        if (passwordtext.length < 8){
+            return "Minimum character 8"
+        }
+        else if (!passwordtext.matches(".*[@#$%^&*!].*".toRegex()) ){
+            return "Minimum (@#\$%^&*!.,?) one character "
+        }
+        return null
+
+    }
+
+    private fun valid_email() : String? {
+
+        val emailText = binding.registeremail.text.toString()
+
+
+        if (!Patterns.EMAIL_ADDRESS.matcher(emailText).matches()) {
+            return "Invalid Email"
+        }
+
+        return null
     }
 
     fun register() {

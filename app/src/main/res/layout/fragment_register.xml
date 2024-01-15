@@ -52,22 +52,31 @@
                         android:id="@+id/registeremaillayout"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        app:helperTextTextColor="@color/red"
                         android:hint="Email"
+                        app:boxStrokeWidth="2dp"
                         app:hintTextColor="@color/black"
+                        app:boxStrokeColor="@color/black"
                         android:layout_marginTop="0dp">
                         <com.google.android.material.textfield.TextInputEditText
                             android:id="@+id/registeremail"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:imeOptions="actionNext"
-                            android:background="@drawable/edittext_corner"/>
+                            android:inputType="textEmailAddress" />
                     </com.google.android.material.textfield.TextInputLayout>
 
                     <com.google.android.material.textfield.TextInputLayout
                         android:id="@+id/registerpasswordlayout"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        app:helperTextTextColor="@color/red"
+                        app:boxStrokeColor="@color/black"
                         android:hint="Password"
+                        app:boxStrokeWidth="2dp"
+                        app:counterEnabled="true"
+                        app:counterMaxLength="16"
+                        app:passwordToggleEnabled="true"
                         app:hintTextColor="@color/black"
                         android:layout_marginTop="40dp">
                         <com.google.android.material.textfield.TextInputEditText
@@ -75,8 +84,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:imeOptions="actionNext"
-                            android:inputType="textPassword"
-                            android:background="@drawable/edittext_corner"/>
+                            android:inputType="textPassword" />
                     </com.google.android.material.textfield.TextInputLayout>
 
                     <androidx.appcompat.widget.AppCompatButton

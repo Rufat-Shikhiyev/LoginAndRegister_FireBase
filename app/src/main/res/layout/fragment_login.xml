@@ -54,17 +54,20 @@
 
                     <com.google.android.material.textfield.TextInputLayout
                         android:id="@+id/loginemaillayout"
+                        app:helperTextTextColor="@color/red"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:hint="Email"
+                        app:boxStrokeColor="@color/black"
                         app:hintTextColor="@color/black"
+                        app:boxStrokeWidth="3dp"
                         android:layout_marginTop="0dp">
                         <com.google.android.material.textfield.TextInputEditText
                             android:id="@+id/loginemail"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:imeOptions="actionNext"
-                            android:background="@drawable/edittext_corner"/>
+                            android:inputType="textEmailAddress" />
                     </com.google.android.material.textfield.TextInputLayout>
 
                     <com.google.android.material.textfield.TextInputLayout
@@ -72,15 +75,20 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:hint="Password"
+                        app:helperTextTextColor="@color/red"
+                        app:boxStrokeWidth="3dp"
                         app:hintTextColor="@color/black"
+                        app:counterEnabled="true"
+                        app:counterMaxLength="16"
+                        app:boxStrokeColor="@color/black"
+                        app:passwordToggleEnabled="true"
                         android:layout_marginTop="20dp">
                         <com.google.android.material.textfield.TextInputEditText
                             android:id="@+id/loginpassword"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:imeOptions="actionNext"
-                            android:inputType="textPassword"
-                            android:background="@drawable/edittext_corner"/>
+                            android:inputType="textPassword" />
                     </com.google.android.material.textfield.TextInputLayout>
 
                         <androidx.appcompat.widget.AppCompatButton
